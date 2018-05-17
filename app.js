@@ -45,6 +45,7 @@ app.get("/signup", function(req, res){
   console.log("이메일:"+email+" 비빌번호:"+pwd);
   res.end("get /signup ok!");
 });
+
 // post 방식 /ajax/test01 요청 처리 
 app.post("/ajax/test01", function(req, res){
   //전송된 문자열 읽어오기
@@ -53,6 +54,16 @@ app.post("/ajax/test01", function(req, res){
   console.log("msg:"+msg);
   //응답
   res.end("post /ajax/test01 ok!");
+});
+
+// get 방식 /ajax/test01 요청 처리 
+app.get("/ajax/test01", function(req, res){
+  //전송된 문자열 읽어오기
+  var msg=req.query.msg;
+  //콘솔에 출력
+  console.log("msg:"+msg);
+  //응답
+  res.end("get /ajax/test01 ok!");
 });
 
 
