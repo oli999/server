@@ -65,7 +65,18 @@ app.get("/ajax/test01", function(req, res){
   //응답
   res.end("get /ajax/test01 ok!");
 });
+//아이디 중복 체크 요청 처리 
+app.post("/ajax/check_id", function(req, res){
+  //전송된 파라미터 추출
+  var id=req.body.id;
 
+  if(id == "gura"){//gura 라는 아이디가 이미 존재 한다고 가정 
+    res.end('{"canUse":false}');
+  }else{
+    res.end('{"canUse":true}');
+  }
+
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
